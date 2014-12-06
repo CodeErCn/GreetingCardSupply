@@ -5,7 +5,9 @@
 
 body {
   width: 100%;
-  background-color: gray;
+  /*background-color: gray;*/
+  background: url('/assets/file/xmas_tree.jpg') no-repeat center center fixed;
+  background-size: cover;
   font-family: sans-serif;
 }
 
@@ -17,6 +19,15 @@ body {
   color: white;
 }
 
+footer {
+  width: 100%;
+  position: fixed;
+  padding: 4px 2%;
+  bottom: 0;
+  background-color: pink;
+  text-align: center;
+  color: white;
+}
     .heading h1 {
       padding: 10px 0px 10px 2%;
       display: inline-block;
@@ -34,7 +45,7 @@ body {
   width: 15%;
   position: fixed;
   top: 80px;
-  bottom: 20px;
+  bottom: 50px;
   left: 2%;
   border: 2px solid white;
   overflow-y: auto;
