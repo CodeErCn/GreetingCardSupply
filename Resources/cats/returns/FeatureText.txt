@@ -1,0 +1,5 @@
+<font color="#FFFF33">How Returns are Managed</font><br>
+What to do in the event that your order has any problems such as 
+<font color="#FFFFFF">damages during transit</font>, 
+<font color="#FFFFFF">defects in manufacturing</font>, 
+or is <font color="#FFFFFF">lost</font>.
