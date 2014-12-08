@@ -5,6 +5,7 @@ class Cart extends CI_Controller {
 
   public function index()
   { 
+    $this->load->view('cart_index');
     // if the post of qty and id != null
     // update_cart(post(id), post(qty))
     // get_cart from model

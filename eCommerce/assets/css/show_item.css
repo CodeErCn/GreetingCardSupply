@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: tomato;
+  font-family: sans-serif;
+}
+
+div.top {
+  margin-bottom: 20px;
+}
+
+    div.top h2 {
+      display: inline-block;
+      color: whitesmoke;
+    }
+
+    div.top a {
+      margin-right: 6%;
+      float: right;
+      display: inline-block;
+      vertical-align: top;
+      text-decoration: none;
+      color: whitesmoke;
+    }
+
+div.body-left {
+  width: 28%;
+  margin-left: 1.2%;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+ 
+    div.body-left>img {
+      width: 80%;
+      margin: 0px auto;
+      display: block;
+    }
+
+    div.body-left-small {
+      width: 80%;
+      margin: 20px auto 0px;
+    }
+
+    div.body-left-small img {
+      width: 18%;
+    }
+
+div.body-right {
+  width: 68%;
+  padding: 1%;
+  margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+    div.body-right p {
+      margin: 20px 0%;
+      color: whitesmoke;
+    }
+
+    div.body-right form {
+      width: 12%;
+      margin: 20px 6% 0px 0px;
+      float: right;
+    }
+
+    div.body-right select {
+      display: inline-block;
+    }
+
+    div.body-right input[type="submit"] {
+      padding: 0px 1%;
+      display: inline-block;
+      background-color: skyblue;
+      color: white;
+    }
+
+div.similar {
+  color: white;
+}
+
+  div.similar-images {
+    margin-top: 20px; 
+  }
+  
+  div.similar-images div {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 2%;
+  }
+  
+  div.similar-images div img {
+    width: 130%;
+    height: 100px;
+  }
