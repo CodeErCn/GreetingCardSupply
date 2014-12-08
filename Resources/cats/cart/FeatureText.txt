@@ -1,0 +1,3 @@
+<font color="#FFFF33">Adjust Your Quantities</font><br>
+<font color="#FFFFFF">Checkout is easy, safe, and completely secure. 
+To remove an item simply set its quantity to zero.</font>
