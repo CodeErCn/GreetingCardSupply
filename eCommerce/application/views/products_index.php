@@ -16,56 +16,56 @@
     <!-- menu Div -->
       <div id="menu">
         <!-- Loop Categories from database -->
-        <h4>Cards & Envelops (?)</h4>
+        <h3>Cards & Envelops</h3>
         <ul>
-          <li><a href="#">?category1?(?)</a></li>
-          <li><a href="#">?category2?(?)</a></li>
-          <li><a href="#">?category3?(?)</a></li>
-          <li><a href="#">?category4?(?)</a></li>
-          <li><a href="#">?category5?(?)</a></li>
-          <li><a href="#">?category6?(?)</a></li>
-          <li><a href="#">?category7?(?)</a></li>
-          <li><a href="#">?category8?(?)</a></li>
-          <li><a href="#">?category9?(?)</a></li>
+      <?php
+        if($cardEnvelope != null) {
+          foreach ($cardEnvelope AS $value) {
+      ?>
+          <li><a href="#"><?=$value?></a></li>
+      <?php    
+          }
+        }
+      ?>
         </ul>
         <!-- End loop cards & evelops -->
-        <h4>Packaging Solutions (?)</h4>
+        <h3>Packaging Solutions</h3>
         <ul>
-          <li><a href="#">?category1?(?)</a></li>
-          <li><a href="#">?category2?(?)</a></li>
-          <li><a href="#">?category3?(?)</a></li>
-          <li><a href="#">?category4?(?)</a></li>
-          <li><a href="#">?category5?(?)</a></li>
-          <li><a href="#">?category6?(?)</a></li>
-          <li><a href="#">?category7?(?)</a></li>
-          <li><a href="#">?category8?(?)</a></li>
-          <li><a href="#">?category9?(?)</a></li>
+          <?php
+        if($pkgingSolution != null) {
+          foreach ($pkgingSolution AS $value) {
+      ?>
+          <li><a href="#"><?=$value?></a></li>
+      <?php    
+          }
+        }
+      ?>
         </ul>
         <!-- End loop packaging solutions -->
-        <h4>Accessories (?)</h4>
+        <h3>Accessories</h3>
         <ul>
-          <li><a href="#">?category1?(?)</a></li>
-          <li><a href="#">?category2?(?)</a></li>
-          <li><a href="#">?category3?(?)</a></li>
-          <li><a href="#">?category4?(?)</a></li>
-          <li><a href="#">?category5?(?)</a></li>
-          <li><a href="#">?category6?(?)</a></li>
-          <li><a href="#">?category7?(?)</a></li>
-          <li><a href="#">?category8?(?)</a></li>
-          <li><a href="#">?category9?(?)</a></li>
+      <?php
+        if($accessories != null) {
+          foreach ($accessories AS $value) {
+      ?>
+          <li><a href="#"><?=$value?></a></li>
+      <?php    
+          }
+        }
+      ?>
         </ul>
         <!-- End loop Accessories -->
-        <h4>Shipping & Retail (?)</h4>
+        <h3>Shipping & Retail</h3>
         <ul>
-          <li><a href="#">?category1?(?)</a></li>
-          <li><a href="#">?category2?(?)</a></li>
-          <li><a href="#">?category3?(?)</a></li>
-          <li><a href="#">?category4?(?)</a></li>
-          <li><a href="#">?category5?(?)</a></li>
-          <li><a href="#">?category6?(?)</a></li>
-          <li><a href="#">?category7?(?)</a></li>
-          <li><a href="#">?category8?(?)</a></li>
-          <li><a href="#">?category9?(?)</a></li>
+      <?php
+          if($shippingRetail != null) {
+            foreach ($shippingRetail AS $value) {
+      ?>
+            <li><a href="#"><?=$value?></a></li>
+      <?php    
+          }
+        }
+      ?>
         </ul>
         <!-- End Shipping & Retail -->
       </div>

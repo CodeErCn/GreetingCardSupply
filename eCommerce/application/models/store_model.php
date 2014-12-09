@@ -9,7 +9,7 @@
 
       public function get_all_categories()
       {
-
+          return $this->db->query("SELECT categories.id, categories.title, categories.description, `lines`.id AS Lid, `lines`.title AS Ltitle FROM categories LEFT JOIN `lines` ON categories.line_id=`lines`.id;")->result_array();
       }
 
       public function get_category_by_id()

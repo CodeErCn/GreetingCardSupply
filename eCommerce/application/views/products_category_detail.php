@@ -22,7 +22,6 @@
     <!-- END Category Top -->
 
       <div class="body">
-
         <div class="body-top-detail">
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores adipisci autem dicta rem, suscipit, dolores optio recusandae nostrum, quam nihil perferendis non, ratione consectetur veniam sint sit quibusdam. Amet, harum.
           </p>
