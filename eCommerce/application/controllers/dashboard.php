@@ -36,8 +36,12 @@ class Dashboard extends CI_Controller {
         {
         }
         
-        public function delete_product()
+        public function delete_product($id)
+        // load model, delete and return to product_manager
         {
+          $this->load->model("Dashboard_model");
+          $products = $this->Dashboard_model->delete_product($id);
+          redirect('dashboard_product_manager');
         }
 
         public function update_product()
@@ -60,7 +64,11 @@ class Dashboard extends CI_Controller {
         }
         
         public function delete_category()
+        // load model, delete and return to product_manager
         {
+          $this->load->model("Dashboard_model");
+          $products = $this->Dashboard_model->delete_category($id);
+          redirect('dashboard_category_manager');
         }
 
         public function update_category()
