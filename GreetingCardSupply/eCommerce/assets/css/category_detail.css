@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: tomato;
+  font-family: sans-serif;
+}
+
+div.top {
+  margin-bottom: 20px;
+}
+
+    div.top h2 {
+          display: inline-block;
+          color: whitesmoke;
+        }
+
+            div.top-page-nav {
+              width: 25%;
+              display: inline-block;
+              float: right;
+            }
+
+            div.top-page-nav li {
+              border-right: 2px solid whitesmoke;
+              padding-left: 2%;
+              padding-right: 6%;
+              display: inline-block;
+              color: whitesmoke;
+            }
+
+            div.top-page-nav li:last-child {
+              border-right: none;
+            }
+
+           div.top-page-nav li a {
+              text-decoration: none;
+              color: whitesmoke;
+            }
+
+  div.body {
+    margin: 1.2%;
+  }  
+      div.body div.body-top-detail {
+        width: 94.5%;
+        height: 250px;
+        margin: 20px 0;
+        overflow: scroll;
+      }
+
+          div.body div.body-top-detail p {
+            width: 75%;
+            display: inline-block;
+          }
+
+          div.body div.body-top-detail img {
+            display: inline-block;
+            vertical-align: top;
+            margin: 10px 2%;
+
+          }
+
+      div.body div {
+        outline: 1px solid red;
+        width: 18%;
+        height: 200px;
+        padding: 5px;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      div.body div p {
+        background-color: red;
+        color: whitesmoke;
+      }
+
+  div.product-page-nav ul {
+    list-style-type: none;
+    margin-left: 25%;
+    margin-bottom: 20px;
+  }
+  
+      div.product-page-nav ul li{
+        display: inline-block;
+        padding: 0px 2%;
+      }
+
+      div.product-page-nav ul li a {
+        text-decoration: none;
+        font-size: 1.2em;
+        color: whitesmoke;
+      }

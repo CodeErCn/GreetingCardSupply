@@ -1,0 +1,81 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 100%;
+  background-color: tomato;
+  /*background: url('/assets/file/xmas_tree.jpg') no-repeat center center fixed;*/
+  /*background-size: cover;*/
+  font-family: sans-serif;
+}
+
+.heading {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: red;
+  color: white;
+}
+
+    .heading h1 {
+      padding: 10px 0px 10px 2%;
+      display: inline-block;
+    }
+
+    .heading a {
+      margin: 20px 2% 0px 0%;
+      float:right;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+    }
+
+footer {
+  width: 100%;
+  position: fixed;
+  padding: 4px 2%;
+  bottom: 0;
+  background-color: red;
+  text-align: center;
+  color: white;
+}
+
+#menu {
+  width: 15%;
+  position: fixed;
+  top: 80px;
+  bottom: 50px;
+  left: 2%;
+  border: 2px solid white;
+  overflow-y: auto;
+}
+
+    #menu h4 {
+      margin: 8px 0%;
+      border-bottom: 1px solid whitesmoke;
+      color: whitesmoke;
+    }
+
+    #menu ul {
+      list-style-type: none;
+    }
+
+    #menu li {
+      margin: 2px;
+    }
+
+    #menu li a {
+      text-decoration: none;
+      color: whitesmoke;
+    }
+
+#products {
+  width: 79%;
+  min-height: 600px;
+  margin: 80px 0% 0px 19%;
+  border: 2px solid white;
+}
+
+    
