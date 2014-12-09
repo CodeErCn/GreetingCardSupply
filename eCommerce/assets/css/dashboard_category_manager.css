@@ -15,7 +15,6 @@ div.dashboard-heading {
   background-color: red;
   color: whitesmoke;
 }
-
     div.dashboard-heading h1 {
       padding: 10px 0px 10px 2%;
       display: inline-block;
@@ -41,7 +40,6 @@ div.dashboard-heading {
               color: whitesmoke;
             }
 
-
 footer {
   width: 100%;
   position: fixed;
@@ -52,17 +50,15 @@ footer {
   color: whitesmoke;
 }
 
-
-
 div.top {
   margin: 80px 0% 20px 2%;
 }
-    
+
     div.top form {
       display: inline-block;
     }
 
-    div.top form.order-status-filter {
+    div.top button {
       margin-left: 78%
     }
 
@@ -73,18 +69,18 @@ table.dashboard {
   color: whitesmoke;
 }
 
-div.order-manager-nav ul {
+div.category-manager-nav ul {
   list-style-type: none;
   margin-left: 25%;
   margin-bottom: 20px;
 }
   
-    div.order-manager-nav ul li{
+    div.category-manager-nav ul li{
       display: inline-block;
       padding: 0px 2%;
     }
 
-    div.order-manager-nav ul li a {
+    div.category-manager-nav ul li a {
             text-decoration: none;
             font-size: 1.2em;
             color: whitesmoke;

@@ -1,21 +1,19 @@
 <html>
-<head>
-	<title>category modal</title>
-</head>
-<body>
-	<h1><?= if ($key) {echo 'Edit Category - ID '.$category_id} else {echo 'New Category'}; ?>  </h1>
-	
-
-	<form action='dashboard/add_category' method='submit'>
-		Name <input type ='text' value='<?= if ($key) {echo $title} else {echo ''}?>' placeholder='<?= if(!key){echo 'enter category name'?>'>
-		Description <input type ='text' value='<?= if ($key) {echo $title} else {echo ''}?>' placeholder='<?= if(!key){echo 'enter category description'?>'>
-		<p>Image Stuff do here, just one image per category so less annoying</p>
-
-		<a href="dashboard/category_manager">Cancel</a>
+	<head>
+		<title>category modal</title>
+	</head>
+	<body>
+		<h1><?= if ($key) {echo 'Edit Category - ID '.$category_id} else {echo 'New Category'}; ?></h1>
 		
-		<submit type='btn' value='Update'>
-	</form>
 
-
-</body>
+		<form action="dashboard/add_category" method="submit">
+			Name <input type ="text" value="<?= if ($key) {echo $title} else {echo ''}?>" placeholder="<?= if(!key){echo 'enter category name'?>">
+			Description <input type ="text" value="<?= if ($key) {echo $title} else {echo ''}?>" placeholder="<?= if(!key){echo 'enter category description'?>">
+			<p>Image Stuff do here, just one image per category so less annoying</p>
+			
+			<a href="dashboard/category_manager">Cancel</a>
+		
+			<input type="submit" value="Update">
+		</form>
+	</body>
 </html>

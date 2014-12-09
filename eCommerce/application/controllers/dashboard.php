@@ -21,8 +21,9 @@ class Dashboard extends CI_Controller {
     // call get_order_by_id from the model
   }
 
-  public function products($start)
+  public function products($start=null)
   {
+    $this->load->view('dashboard_product_manager');
     //show the product manager
   }
 
@@ -43,8 +44,9 @@ class Dashboard extends CI_Controller {
         {
         }
 
-  public function categories($start)
+  public function categories($start=null)
   {
+    $this->load->view('dashboard_category_manager');
     //show the category manager
   }
 
