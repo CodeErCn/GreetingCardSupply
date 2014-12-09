@@ -3,8 +3,9 @@
 
 class Dashboard extends CI_Controller {
 
-  public function index($start)
+  public function index($start=null)
   {
+    $this->load->view('dashboard_order_manager');
    // Order manager
    // get_all_orders and sort by desc
   }
@@ -20,8 +21,9 @@ class Dashboard extends CI_Controller {
     // call get_order_by_id from the model
   }
 
-  public function categories($start)
+  public function products($start=null)
   {
+    $this->load->view('dashboard_product_manager');
     //show the product manager
   }
 
@@ -42,8 +44,9 @@ class Dashboard extends CI_Controller {
         {
         }
 
-  public function categories($start)
+  public function categories($start=null)
   {
+    $this->load->view('dashboard_category_manager');
     //show the category manager
   }
 
