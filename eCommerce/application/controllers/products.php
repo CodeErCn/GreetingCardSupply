@@ -20,19 +20,18 @@ class Products extends CI_Controller {
   }
 
   public function categorymain() {
-    $this->load->view('category_main');
+    $this->load->view('products_category_main');
   }
-
 
   public function categorydetail($id=null, $start=null)
   {
     //get products by category
-    $this->load->view('category_detail');
+    $this->load->view('products_category_detail');
   }
 
   public function show_item($id=null)
   {
-    $this->load->view('show_item');
+    $this->load->view('products_show_item');
 
     //get the product_by_id
     //get the similar
