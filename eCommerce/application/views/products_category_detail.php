@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Categories Detail</title>
-    <link rel="stylesheet" type="text/css" href="/assets/css/prodcuts_category_detail.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/products_category_detail.css">
   </head>
   <body>
       <div class="top">
