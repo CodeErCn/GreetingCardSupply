@@ -1,6 +1,0 @@
-<font color="#FFFF33">View Item Details</font><br>
-This page is dedicated to specific items. In this particular case you are 
-viewing 
-<font color="#FFFFFF">Item #<#query></font> from the 
-<a href="/?cat|<#1002|#query|Cat>" class="FeatureLink"><#1000|[1002|#query|Cat]|MetaTitle></a> 
-category.

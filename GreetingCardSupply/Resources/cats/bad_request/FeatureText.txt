@@ -1,1 +1,0 @@
-<font color="#FFFF33">Bad Request</font>
