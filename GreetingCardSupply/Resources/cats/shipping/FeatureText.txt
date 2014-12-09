@@ -1,3 +1,0 @@
-<font color="#FFFF33">Select Your Preferred Shipping Method</font><br>
-With UPS you can track your orders, but USPS may be more economical 
-for small orders.

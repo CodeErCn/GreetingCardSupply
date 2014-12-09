@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>product modal</title>
+</head>
+<body>
+	<h1><?= if ($key) {echo 'Edit Product - ID '.$product_id} else {echo 'New Product'}; ?>  </h1>
+	
+
+	<form action='dashboard/add_product' method='submit'>
+		Name <input type ='text' value='<?= if ($key) {echo $title} else {echo ''}?>' placeholder='<?= if(!key){echo 'enter product name'?>'>
+		Description <input type ='text' value='<?= if ($key) {echo $title} else {echo ''}?>' placeholder='<?= if(!key){echo 'enter product description'?>'>
+		Categories <select name='category_update'>
+						<option <?= $category_update['foreach cateogory loop'] ?> >loopstart</option>
+					</select>	
+		<a href="dashboard/product_manager">Cancel</a>
+		<a href="dashboard/" name='preview'>Preview</a>
+		<submit type='btn' value='Update'>
+	</form>
+
+
+</body>
+</html>

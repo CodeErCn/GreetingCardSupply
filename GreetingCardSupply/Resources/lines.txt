@@ -1,5 +1,0 @@
-id	title
-1	Cards & Envelopes
-2	Packaging Solutions
-3	Accessories
-4	Shipping & Retail

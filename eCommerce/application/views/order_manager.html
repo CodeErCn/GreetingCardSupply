@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>order manager</title>
+</head>
+<body>
+
+	<form action='dashboard/order_search' method='post'>
+		<input type='text' name='order_search'>
+	</form>
+
+	<form>
+		<select name='order_filter' value='Show All'>
+				<option <?= $status['pending'] ?> value='1' >pending</option>
+				<option <?= $status['process'] ?> value='2' >in process</option>
+				<option <?= $status['shipped'] ?> value='3' >shipped</option>
+				<option <?= $status['cancelled'] ?> value='4' >cancelled</option>
+	</form>
+
+	<table style="width:100%">
+		<thead style="background-color: light gray">
+			<tr>
+				<th>Order ID</th>
+				<th>Name</th>
+				<th>Date</th>
+				<th>Billing Address</th>
+				<th>Total</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?= foreach (orders as $order) { ?>
+			<tr>
+				<td><a href="/dashboard/show/<?= $order_id ?>"><?= $order_id ?></a></td>
+				<td><?= $first_name.+' '+.$last_name ?></td>
+				<td><?= $created_at ?></td>
+				<td><?= $street_address.+' '+.$street_address2.+' '+.$city.+' '+.$state.+' '+.$zip ?></td>
+				<td><?= $total // some function to get total from order based on items table ?></td>
+				<td style="text-align:center">
+					<form action='/dashboard/update_order_status/<?= $order_id ?>'>
+					<select name='order_status'>
+						<option <?= $status['pending'] ?> value='1' >pending</option>
+						<option <?= $status['process'] ?> value='2' >in process</option>
+						<option <?= $status['shipped'] ?> value='3' >shipped</option>
+						<option <?= $status['cancelled'] ?> value='4' >cancelled</option>
+					</select>	
+				</td>
+			</tr>
+			<?= } ?>
+		</tbody>
+	</table>
+
+	<ul>
+		<?= foreach (orders as order) { ?>
+		<li></li>
+
+
+	</ul>
+
+</body>
+</html>

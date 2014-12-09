@@ -1,6 +1,0 @@
-<font color="#FFFF33">Manage Your Newsletter Subscription</font><br>
-Occasionally we send out an email with 
-<font color="#FFFFFF">promotional offers</font> and 
-<font color="#FFFFFF">card making ideas</font>. 
-<font color="#FFFFFF">We do not sell or share your email address 
-with anyone!</font>

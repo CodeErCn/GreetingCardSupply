@@ -1,4 +1,0 @@
-<font color="#FFFF33">Search by Item Number, Keyword, or Size!</font><br>
-This search is "smart." It takes into account the exact matches, multiple 
-keywords and the sequences they were provided to create a rating and then 
-returns the results based on that.
