@@ -9,7 +9,10 @@ body {
 }
 
 h2 {
+  width: 90%;
   margin-bottom: 20px;
+  border-top: 2px solid whitesmoke;
+  border-bottom: 3px solid whitesmoke;
   color: whitesmoke;
 }
 
@@ -18,38 +21,14 @@ div.categories {
 }
 
 
-    div.cards-n-envelop div {
-      outline: 1px solid red;
-      width: 10%;
-      height: 100px;
+    div.categories div {
       padding: 5px;
       display: inline-block;
       vertical-align: top;
     }
       
-    div.pk-solution div {
-      outline: 1px solid red;
-      width: 10%;
-      height: 100px;
-      padding: 5px;
-      display: inline-block;
-      vertical-align: top;
+    div.categories div a {
+      text-decoration: none;
+      color: whitesmoke;
     }
-      
-    div.accessories div {
-      outline: 1px solid red;
-      width: 10%;
-      height: 100px;
-      padding: 5px;
-      display: inline-block;
-      vertical-align: top;
-    }
-      
-    div.shipping-n-retail div {
-      outline: 1px solid red;
-      width: 10%;
-      height: 100px;
-      padding: 5px;
-      display: inline-block;
-      vertical-align: top;
-    }
+    
