@@ -25,16 +25,16 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?= foreach (products as $product) { ?>
+			 <?php //foreach (products as $product) { ?>
 			<tr>
-				<td><?= $images.product_id where type = thumb ?></a></td>
-				<td><?= $product_id ?><td>
-				<td><?= $product_title ?></td>
-				<td><?= $inventory_count query based on products table ?></td>
-				<td><?= $quantity_sold query based on qty in items table ?></td>
+				<td><?php // $images.product_id where type = thumb ?></a></td>
+				<td><?php // $product_id ?><td>
+				<td><?php // $product_title ?></td>
+				<td><?php // $inventory_count query based on products table ?></td>
+				<td><?php // $quantity_sold query based on qty in items table ?></td>
 				<td>
-					<a href="/orders/show/<?= dashboard/add_product/product_id ?>">edit</a> 
-					<a href="/orders/show/<?= dashboard/delete_product/product_id ?>">delete</a>			
+					<a href="/orders/show/<?php // dashboard/add_product/product_id ?>">edit</a> 
+					<a href="/orders/show/<?php // dashboard/delete_product/product_id ?>">delete</a>			
 				</td>
 			</tr>
 			<?= } ?>
@@ -42,8 +42,8 @@
 	</table>
 
 	<ul>
-		<?= foreach (products as product) { ?>
-		<li> $start? </li>
+		<?php // foreach (products as product) { ?>
+		<li>  </li>
 
 	</ul>
 
