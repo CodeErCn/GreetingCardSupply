@@ -43,18 +43,19 @@ footer {
 }
 
 #menu {
-  width: 15%;
+  width: 19%;
   position: fixed;
   top: 80px;
   bottom: 50px;
   left: 2%;
-  border: 2px solid white;
+/*  border: 2px solid white;*/
   overflow-y: auto;
 }
 
-    #menu h4 {
+    #menu h3 {
       margin: 8px 0%;
-      border-bottom: 1px solid whitesmoke;
+      border-top: 2px solid whitesmoke;
+      border-bottom: 3px solid whitesmoke;
       color: whitesmoke;
     }
 
@@ -72,9 +73,9 @@ footer {
     }
 
 #products {
-  width: 79%;
+  width: 76%;
   min-height: 600px;
-  margin: 80px 0% 0px 19%;
+  margin: 80px 0% 0px 22%;
   border: 2px solid white;
 }
 

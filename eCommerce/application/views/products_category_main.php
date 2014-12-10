@@ -1,27 +1,42 @@
-<!-- Home Page... -->
-    
-    <?php 
-    foreach($lines as $line) {
-    ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Categories Main</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/products_category_main.css">
+  </head>
+  <body>
+    <div class="categories">
+       <!-- Products Category Main Page... -->
+            <?php 
+            foreach($lines AS $line => $val) {
+            ?>  
+                <h2><?=$line?></h2>
+                <?php 
+                  foreach($val AS $category => $title) {
 
-      <div class="categories">
-        
-        <h2><?= $lines['title']?></h2>
-        <?=php 
-          foreach($categories as $category) {
-        ?>
-        
-        <div>
-          <img src="/pix/category/<?= $category['id'] ?>_thumb.png" alt="<?= $category['title'] ?>">
-          <h6><a href="/category/<?= $category['id'] ?>"><?= $category['title'] ?></a></h6>
-        </div>
-        
-        <?=php 
-          }
-        ?>
-        
-    <?php
-      }
-    ?>
-
-<!-- ...Home Page -->
+                  if($line=="Cards & Envelopes")
+                    $category=$category+1;
+                  else if($line=="Packaging Solutions")
+                    $category=$category+14;
+                  else if($line=="Accessories")
+                    $category=$category+22;
+                  else if($line=="Shipping & Retail")
+                    $category=$category+26;
+                ?>
+                <div>
+                  <img src="/assets/file/pix/category/<?=$category?>_thumb.png" alt="<?=$title?>">
+                  <h6><a href="/category/<?=$category?>"><?=$title?></a></h6>
+                </div>  
+                <?php 
+                  }
+                ?>      
+            <?php
+              }
+            ?>
+        <!-- END of lines-categories -->
+      <!-- ...Products Category Main Page --> 
+    </div>
+  <!-- END of categories -->
+  </body>
+</html>

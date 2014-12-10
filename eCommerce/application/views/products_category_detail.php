@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Categories Detail</title>
-    <link rel="stylesheet" type="text/css" href="/assets/css/prodcuts_category_detail.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/products_category_detail.css">
   </head>
   <body>
       <div class="top">
@@ -22,7 +22,6 @@
     <!-- END Category Top -->
 
       <div class="body">
-
         <div class="body-top-detail">
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores adipisci autem dicta rem, suscipit, dolores optio recusandae nostrum, quam nihil perferendis non, ratione consectetur veniam sint sit quibusdam. Amet, harum.
           </p>
