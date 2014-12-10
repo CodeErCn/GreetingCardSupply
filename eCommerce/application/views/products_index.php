@@ -9,7 +9,7 @@
     <!-- heading Div -->
       <div class="heading">
       <h1>Greeting Card Supply</h1>
-      <a href="#">Shopping Cart(?)</a>
+      <a href="/cart">Shopping Cart(?)</a>
       </div>
     <!-- End of heading -->
         
