@@ -6,7 +6,7 @@ class Admin extends CI_Controller {
   public function index()
   {
    // log in form
-    $this->load->view('admin_login')
+    $this->load->view('admin_login');
   }
 
   public function login()
@@ -22,12 +22,12 @@ class Admin extends CI_Controller {
     if($this->Admin_model->login_validation($email, $password)) 
     {
       $this->session->set_userdata('email', $email);
-      redirect('/dashboard/index');
+      redirect('dashboard/index');
     } 
     else 
     {
       $this->session->set_flashdata('message', "Invalid user name or password.");
-      redirect('/');
+      redirect('admin/index');
     }
   }
 
