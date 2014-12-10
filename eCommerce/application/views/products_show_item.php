@@ -7,67 +7,51 @@
   </head>
   <body>
     <div class="top">
-      <h2>?Product Detail?</h2>
-      <a href="#">Back to Category</a>
+      <a href="/">Back to Category</a>
     </div>
+  <!-- END top div -->
     <div class="body-left">
-      <img src="#" alt="">
-      <div class="body-left-small">
-        <img src="#" alt="">
-        <img src="#" alt="">
-        <img src="#" alt="">
-        <img src="#" alt="">
-        <img src="#" alt="">
-      </div>
-    <!-- END small icon -->
+      <img src="/assets/file/pix/zoom/<?=$products['id']?>_zoom.png" alt="<?=$products['id']?>"/>
     </div>
-  <!-- END body left -->
+  <!-- END body left div -->
     <div class="body-right">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, deserunt, doloribus. Sed, dolorum, quas. Inventore laborum corporis, officia. Aliquam vel molestias perspiciatis esse quos quo nostrum voluptatem tenetur harum libero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum in atque quia, aperiam aspernatur iusto debitis, optio eaque, laboriosam velit nam quis repudiandae quas itaque reprehenderit, soluta esse temporibus est? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum dolores rerum illum ab quos iste tempora, dolor, laboriosam, deserunt unde obcaecati culpa aut hic reprehenderit quisquam itaque expedita quidem magnam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit modi dolorem iste tenetur velit quibusdam earum dignissimos, libero vitae iusto totam quasi, laudantium molestias quidem illum porro cumque, voluptatibus commodi.
-      </p>
+      <div class="body-right-thumb">
+        <img src="/assets/file/pix/thumb/<?=$products['id']?>_thumb.png" alt="<?=$products['id']?>"/>
+      </div>
+    <!-- END body-right-thumb div -->
+      <p><?=$products['description']?></p>
+      <p>Type: <span><?=$products['type']?></span></p>
+      <p>Density: <span><?=$products['density']?></span></p>
+      <p>Color: <span><?=$products['color']?></span></p>
+      <p>Material: <span><?=$products['material']?></span></p>
+      
       <form action="#" method="">
         <select>
-          <option value="">option1</option>
-          <option value="">option2</option>
-          <option value="">option3</option>
+          <option value="opt1">option1</option>
+          <option value="opt2">option2</option>
+          <option value="opt3">option3</option>
         </select>
         <input type="submit" name="submit-buy" value="Buy">
       </form>
     </div>
+  <!-- END body right div -->
     <div class="similar">
-      <h4>Similar Items</h4>
+      <h3>Similar Items</h3>
       <div class="similar-images">
-         <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
+      <?php  
+        for($i=0; $i<6; $i++) {
+      ?>
         <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
+          <a href="/item/<?=$similar[$i]['pid']?>">
+            <img src="/assets/files/pix/thumb/<?=$similar[$i]['pid']?>_thumb.png" alt="<?=$similar[$i]['pid']?>"/>
+            <p>$<?=number_format($similar[$i]['price']*$similar[$i]['unitqty'], 2,'.',',')?></p>
+          </a>
         </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
+      <?php
+        }
+      ?>
       </div>
     </div>
-  <!-- END similar -->
+  <!-- END similar div-->
   </body>
 </html>

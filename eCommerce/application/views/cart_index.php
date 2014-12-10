@@ -7,10 +7,22 @@
     </head>
     <body>
       <div class="top">
-        <table>
+        <table class="table" border = 1>
+          <thead style="background-color: light gray">
+            <tr>
+              <th>Order ID</th>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Billing Address</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
         </table>
-        <button>Checkout</button>
-        <button>Continue Shopping</button>
+        <div class="buttons">
+          <button>Checkout</button>
+          <button>Continue Shopping</button>
+        </div>
       </div>
     <!-- END of top -->
       <div class="shipping">
@@ -43,7 +55,7 @@
           <label>Zip code:  <input type="text"/></label>
           <label>Card:  <input type="text"/></label>
           <label>Billing DAte: <input type="text"/></label>
-          <label>Expiration: <input type="text"/> / <input type="text"></label>
+          <label>Expiration: <input class="month" type="text"/> / <input class="date" type="text"></label>
         </form>
       </div>
     <!-- END of billing -->

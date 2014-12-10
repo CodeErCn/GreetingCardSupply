@@ -25,8 +25,10 @@
                     $category=$category+26;
                 ?>
                 <div>
-                  <img src="/assets/file/pix/category/<?=$category?>_thumb.png" alt="<?=$title?>">
-                  <h6><a href="/category/<?=$category?>"><?=$title?></a></h6>
+                  <a href="/category/<?=$category?>/1">
+                    <img src="/assets/file/pix/category/<?=$category?>_thumb.png" alt="<?=$title?>">
+                    <h6><?=$title?></h6>
+                  </a>
                 </div>  
                 <?php 
                   }

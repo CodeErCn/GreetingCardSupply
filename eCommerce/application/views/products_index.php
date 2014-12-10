@@ -8,8 +8,8 @@
   <body>
     <!-- heading Div -->
       <div class="heading">
-      <h1>Greeting Card Supply</h1>
-      <a href="#">Shopping Cart(?)</a>
+      <h1><a href="/">Greeting Card Supply</a></h1>
+      <a class="cart" href="#">Shopping Cart(?)</a>
       </div>
     <!-- End of heading -->
         
@@ -19,10 +19,11 @@
         <h3>Cards & Envelops</h3>
         <ul>
       <?php
-        if($cardEnvelope != null) {
-          foreach ($cardEnvelope AS $value) {
+        if($main['cardEnvelope'] != null) {
+          foreach ($main['cardEnvelope'] AS $category => $value) {
+          $category=$category+1;
       ?>
-          <li><a href="#"><?=$value?></a></li>
+          <li><a href="/category/<?=$category?>/1"><?=$value?></a></li>
       <?php    
           }
         }
@@ -32,10 +33,11 @@
         <h3>Packaging Solutions</h3>
         <ul>
           <?php
-        if($pkgingSolution != null) {
-          foreach ($pkgingSolution AS $value) {
+        if($main['pkgingSolution'] != null) {
+          foreach ($main['pkgingSolution'] AS $category => $value) {
+          $category=$category+14;
       ?>
-          <li><a href="#"><?=$value?></a></li>
+          <li><a href="/category/<?=$category?>/1"><?=$value?></a></li>
       <?php    
           }
         }
@@ -45,10 +47,11 @@
         <h3>Accessories</h3>
         <ul>
       <?php
-        if($accessories != null) {
-          foreach ($accessories AS $value) {
+        if($main['accessories'] != null) {
+          foreach ($main['accessories'] AS $category => $value) {
+          $category=$category+22;
       ?>
-          <li><a href="#"><?=$value?></a></li>
+          <li><a href="/category/<?=$category?>/1"><?=$value?></a></li>
       <?php    
           }
         }
@@ -58,10 +61,11 @@
         <h3>Shipping & Retail</h3>
         <ul>
       <?php
-          if($shippingRetail != null) {
-            foreach ($shippingRetail AS $value) {
+          if($main['shippingRetail'] != null) {
+            foreach ($main['shippingRetail'] AS $category => $value) {
+            $category=$category+26;
       ?>
-            <li><a href="#"><?=$value?></a></li>
+            <li><a href="/category/<?=$category?>/1"><?=$value?></a></li>
       <?php    
           }
         }
@@ -73,7 +77,7 @@
 
     <!-- products Div -->
       <div id="products">
-        <h1>OUTLET FOR OTHER VIEWS HERE</h1>
+        <?=$outlet?>
       </div>
     <!-- End of products -->
     </div>

@@ -12,16 +12,10 @@ div.top {
   margin-bottom: 20px;
 }
 
-    div.top h2 {
-      display: inline-block;
-      color: whitesmoke;
-    }
-
     div.top a {
-      margin-right: 6%;
-      float: right;
-      display: inline-block;
-      vertical-align: top;
+      margin: 0px 6% 0px 0%;
+      display: block;
+      text-align: right;
       text-decoration: none;
       color: whitesmoke;
     }
@@ -39,47 +33,55 @@ div.body-left {
       display: block;
     }
 
-    div.body-left-small {
-      width: 80%;
-      margin: 20px auto 0px;
-    }
-
-    div.body-left-small img {
-      width: 18%;
-    }
 
 div.body-right {
   width: 68%;
-  padding: 1%;
-  margin-bottom: 20px;
+  padding: 0px 1%;
   display: inline-block;
   vertical-align: top;
 }
+    div.body-right-thumb {
+      width: 100%;
+    }
+
+    div.body-right-thumb img{
+      width: 20%;
+      height: 150px;
+      display: inline-block;
+      vertical-align: top;
+    }
 
     div.body-right p {
-      margin: 20px 0%;
+      width: 60%;
+      margin: 2px 0%;
       color: whitesmoke;
     }
 
+
     div.body-right form {
-      width: 12%;
-      margin: 20px 6% 0px 0px;
-      float: right;
+      margin: 20px 0%;
+      text-align: left;
     }
 
     div.body-right select {
+      width: 30%;
       display: inline-block;
+      border: 0;
+      font-size: 1em;
     }
 
     div.body-right input[type="submit"] {
-      padding: 0px 1%;
+      padding: 2px 4%;
       display: inline-block;
       background-color: skyblue;
-      color: white;
+      border: none;
+      border-radius: 3px;
+      font-size: 1em;
+      color: whitesmoke;
     }
 
 div.similar {
-  color: white;
+  color: whitesmoke;
 }
 
   div.similar-images {
@@ -91,8 +93,13 @@ div.similar {
     vertical-align: top;
     margin: 10px 2%;
   }
-  
-  div.similar-images div img {
-    width: 130%;
-    height: 100px;
+
+  div.similar-images a {
+    text-decoration: none;
+    color: whitesmoke;
   }
+
+  div.similar-images p {
+    background-color: red;
+  }
+  
