@@ -7,14 +7,26 @@
   </head>
   <body>
       <div class="top">
-        <h2>?category2?(page 2?)</h2>
+        <h2><?=$product_category[0]['title']?> page <?=$start?> </h2>
    
         <div class="top-page-nav">
           <ul>
-            <li><a href="#">first</a></li>
-            <li><a href="#">prev</a></li>
-            <li>?page 2?</li>
-            <li><a href="#">next</a></li>
+            <li><a href="/category/<?=$id?>/1">first</a></li>
+            <?php 
+              if(($start-1)>0){
+            ?>
+            <li><a href="/category/<?=$id?>/<?=$start-1?>">prev</a></li>
+            <?php
+              }
+            ?>
+            <li>page <?=$start?></li>
+            <?php 
+              if(($start+1)<=ceil($pc_count/5)){
+            ?>
+            <li><a href="/category/<?=$id?>/<?=$start+1?>">next</a></li>
+            <?php
+              }
+            ?>
           </ul>
         </div>
       <!-- END top-page-nav -->
@@ -23,87 +35,34 @@
 
       <div class="body">
         <div class="body-top-detail">
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores adipisci autem dicta rem, suscipit, dolores optio recusandae nostrum, quam nihil perferendis non, ratione consectetur veniam sint sit quibusdam. Amet, harum.
-          </p>
-          <img src="#" alt=""/>
+          <p><?=$product_category[0]['cDescription']?></p>
+          <img src="/assets/file/pix/category/<?=$product_category[0]['id']?>_zoom.png" alt="<?=$product_category[0]['title']?>"/>
         </div>
       <!-- END body top detail -->
+      <?php  
+        foreach($product_category AS $val) {
+      ?>
         <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
+          <a href="/item/<?=$val['pid']?>">
+            <img src="/assets/files/pix/thumb/<?=$val['pid']?>_thumb.png" alt="<?=$val['pid']?>"/>
+            <p>$<?=number_format($val['price']*$val['unitqty'], 2,'.',',')?></p>
+          </a>
         </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
-        <div>
-          <img src="#" alt=""/>
-          <p>?$100.00?</p>
-        </div>
+      <?php
+        }
+      ?>
       </div>
     <!-- END body -->
       
       <div class="product-page-nav">
         <ul>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li><a href="#">6</a></li>
-          <li><a href="#">7</a></li>
-          <li><a href="#">8</a></li>
-          <li><a href="#">9</a></li>
-          <li><a href="#">10</a></li>
-          <li><a href="#">>></a></li>
+      <?php  
+        for($i=0, $j=ceil($pc_count/5); $i<$j; $i++) {
+      ?>
+          <li><a href="/category/<?=$id?>/<?=$i+1?>"><?=$i+1?></a></li>
+      <?php 
+        }
+      ?>
         </ul>
       </div>
     <!-- END product page nav -->  

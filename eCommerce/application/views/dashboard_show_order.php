@@ -7,20 +7,21 @@
 		<p>Order ID: <?php // $order_id ?></p>
 		<br>
 		<p>Customer shipping info:</p>
+		<p>email: <?php //$email ?></p>
 		<p>name: <?php // $first_name.+' '+.$last_name ?></p>
-		<p>address: <?php // $street_address ?></p>
-		<p>address2: <?php // $street_address2 ?></p>
-		<p>city: <?php // $city ?></p>
-		<p>state: <?php // $state ?></p>
-		<p>zip: <?php // $zip ?></p>
+		<p>address: <?php // $shipaddress1 ?></p>
+		<p>address2: <?php // $shipaddress2 ?></p>
+		<p>city: <?php // $shipcity ?></p>
+		<p>state: <?php // $shipstate ?></p>
+		<p>zip: <?php // $shipzip ?></p>
 		<br>
 		<p>Customer billing info:</p>
 		<p>name: <?php // $first_name.+' '+.$last_name ?></p>
-		<p>address: <?php // $street_address ?></p>
-		<p>address2: <?php // $street_address2 ?></p>
-		<p>city: <?php // $city ?></p>
-		<p>state: <?php // $state ?></p>
-		<p>zip: <?php // $zip ?></p>
+		<p>address: <?php // $billaddress1 ?></p>
+		<p>address2: <?php // $billaddress2 ?></p>
+		<p>city: <?php // $billcity ?></p>
+		<p>state: <?php // $billstate ?></p>
+		<p>zip: <?php // $billzip ?></p>
 	</div>
 
 	<table>
@@ -38,7 +39,7 @@
 			<tr>
 				<td><?php // $item_id ?></td>
 				<td><?php // $product_id ?></td>
-				<td><?php // $price ?></td>
+				<td><?php // $order_price ?></td>
 				<td><?php // $qty ?></td>
 				<td><?php // $total ?></td>
 			</tr>

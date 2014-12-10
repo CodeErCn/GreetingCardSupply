@@ -39,6 +39,8 @@
 */
 
 $route['default_controller'] = "products/index";
+$route['category/(:num)/(:num)'] = "products/categorydetail/$1/$2";
+$route['item/(:any)'] = "products/show_item/$1";
 $route['404_override'] = '';
 
 

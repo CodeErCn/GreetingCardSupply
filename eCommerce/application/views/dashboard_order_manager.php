@@ -37,7 +37,7 @@
 		</div>
 	<!-- END div top -->
 
-		<table class="dashboard" border = 1>
+		<table class="dashboard">
 			<thead style="background-color: light gray">
 				<tr>
 					<th>Order ID</th>
@@ -51,36 +51,40 @@
 			
 			<tbody>
 				<?php
-				// foreach (orders as $order) { ?>
-				<tr>
-					<td><a href="/dashboard/show/<?php
-					// $order_id ?>"><?php
-					//$order_id ?></a></td>
-					<td><?php
-					//$first_name.+' '+.$last_name ?></td>
-					<td><?php
-					//$created_at ?></td>
-					<td><?php
-					// $street_address.+' '+.$street_address2.+' '+.$city.+' '+.$state.+' '+.$zip ?></td>
-					<td><?php
-					// $total // some function to get total from order based on items table ?></td>
-					<td style="text-align:center">
-						<form action='/dashboard/update_order_status/<?php //$order_id ?>'>
-							<select name='order_status'>
-								<option <?php 
-								// $status['pending'] ?> value='1' >pending</option>
-								<option <?php 
-								// $status['process'] ?> value='2' >in process</option>
-								<option <?php 
-								// $status['shipped'] ?> value='3' >shipped</option>
-								<option <?php
-								 // $status['cancelled'] ?> value='4' >cancelled</option>
-							</select>	
-						</form>
-					</td>
-				</tr>
-				<?php 
-				// } ?>
+						// var_dump($orders);
+						// die('here');
+				for($i=0;$i<count($orders);$i++)
+					{
+
+				?>
+				
+					<tr>
+						<td><a href="/dashboard/show_order/<?= $orders[$i]['id'] ?>">
+							<?= $orders[$i]['id'] ?></a></td>
+						<td><?php
+						//$order['first_name'].+' '+.$order['last_name'] ?></td>
+						<td><?php
+						//$order['created_at'] ?></td>
+						<td><?php
+						// $order['street_address'].+' '+.$order['street_address2'].+' '+.$order['city'].+' '+.$order['state'].+' '+.$order['zip'] ?></td>
+						<td><?php
+						// $total // some function to get total from order based on items table ?></td>
+						<td style="text-align:center">
+							<form action='/dashboard/update_order_status/<?php //$order['id'] ?>'>
+								<select name='order_status'>
+									<option <?php 
+									// $status['pending'] ?> value='1' >pending</option>
+									<option <?php 
+									// $status['process'] ?> value='2' >in process</option>
+									<option <?php 
+									// $status['shipped'] ?> value='3' >shipped</option>
+									<option <?php
+									 // $status['cancelled'] ?> value='4' >cancelled</option>
+								</select>	
+							</form>
+						</td>
+					</tr>
+				<?php } ?>	
 			</tbody>
 		</table>
 		<!-- END of order table for dashboard -->

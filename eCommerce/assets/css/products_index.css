@@ -20,16 +20,22 @@ body {
 }
 
     .heading h1 {
+      width: 26%;
       padding: 10px 0px 10px 2%;
       display: inline-block;
     }
 
     .heading a {
+      text-decoration: none;
+      color:whitesmoke;
+    }
+
+    .heading a.cart {
       margin: 20px 2% 0px 0%;
       float:right;
       display: inline-block;
       text-decoration: none;
-      color: white;
+      color: whitesmoke;
     }
 
 footer {
@@ -39,7 +45,7 @@ footer {
   bottom: 0;
   background-color: red;
   text-align: center;
-  color: white;
+  color: whitesmoke;
 }
 
 #menu {
@@ -48,12 +54,11 @@ footer {
   top: 80px;
   bottom: 50px;
   left: 2%;
-/*  border: 2px solid white;*/
   overflow-y: auto;
 }
 
     #menu h3 {
-      margin: 8px 0%;
+      margin: 0px 0%;
       border-top: 2px solid whitesmoke;
       border-bottom: 3px solid whitesmoke;
       color: whitesmoke;
@@ -73,10 +78,9 @@ footer {
     }
 
 #products {
-  width: 76%;
+  width: 80%;
   min-height: 600px;
-  margin: 80px 0% 0px 22%;
-  border: 2px solid white;
+  margin: 80px 0% 30px 22%;
 }
 
     
