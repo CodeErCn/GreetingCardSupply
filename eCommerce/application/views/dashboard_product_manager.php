@@ -20,25 +20,25 @@
 				    <a href="/dashboard/products">Products</a>
 				    <a href="/dashboard/categories">Categories</a>
 			    </div>
+
+			    <form action="/dashboard/search_products" method="POST">
+	          <input class="search" type="text" name="search-result"  placeholder="Search.."/>
+	          <input type="submit" name="search" value="Search"/>
+	        </form>
+
+		
 			    <a class="log-off" href="/admin/logout">Log Off</a>
 		    </div>
 		  <!-- End of heading -->
 		
 		<div class="top">
-			<form action="/dashboard/search_products" method="POST">
-	          <input class="search" type="text" name="search-result"  placeholder="Search.."/>
-	          <input type="submit" name="search" value="Search"/>
-	        </form>
-
-			<a href="/dashboard/add_edit_product" id="add_product">add new product</a>
-			
-			
+				<a href="/dashboard/add_edit_product" id="add_product">add new product</a>
 		</div>
 	<!-- END of div top -->
 
 	
 
-		<table class="dashboard" border = 1>
+		<table class="dashboard">
 			<thead>
 				<tr>
 					<th>Picture</th>

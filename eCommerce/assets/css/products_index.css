@@ -24,7 +24,7 @@ body {
     }
 
     .heading form {
-      width: 55%;
+      width: 57%;
       margin-top: 15px;
       text-align: right;
       display: inline-block;
@@ -54,7 +54,6 @@ body {
           font-size: 0.9em;
           color: whitesmoke;
         }
-
 
     .heading a {
       text-decoration: none;

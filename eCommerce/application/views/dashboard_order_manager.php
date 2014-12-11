@@ -12,15 +12,16 @@
 			    <a href="/dashboard/products">Products</a>
 			    <a href="/dashboard/categories">Categories</a>
 			</div>
-		    <a class="log-off" href="/admin/logout">Log Off</a>
+			<form action="/dashboard/search_orders" method="post">
+				<input class="search" type="text" name="search-result" placeholder="Search...">
+				<input type="submit" name="search" value="Search"/>
+			</form>	
+		  <a class="log-off" href="/admin/logout">Log Off</a>
 	    </div>
 	  <!-- End of heading -->
 		
 		<div class="top">
-			<form action="/dashboard/search_orders" method="post">
-				<input type="text" name="search-result" placeholder="Search...">
-				<input type="submit" name="search" value="Search"/>
-			</form>	
+			
 			<!-- END search box input text -->
 			<form class="order-status-filter">
 				<select name="order_filter" value="Show All">
