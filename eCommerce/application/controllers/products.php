@@ -56,6 +56,8 @@ class Products extends CI_Controller {
       $return['outlet'] = $this->load->view('products_category_detail', $this->session->flashdata('categoryDetail'), TRUE);
     } else if ($this->session->flashdata('showItem') !=null) {
       $return['outlet'] = $this->load->view('products_show_item', $this->session->flashdata('showItem'), TRUE);
+    } else if($this->session->flashdata('cart')!=null) {
+      $return['outlet'] = $this->load->view('cart_index','',TRUE);
     }
     //get cart
     //build view
