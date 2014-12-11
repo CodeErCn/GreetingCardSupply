@@ -35,8 +35,8 @@
 
       <div class="body">
         <div class="body-top-detail">
+          <img src="/assets/file/pix/category/<?=$product_category[0]['id']?>_full.png" alt="<?=$product_category[0]['title']?>"/>
           <p><?=$product_category[0]['cDescription']?></p>
-          <img src="/assets/file/pix/category/<?=$product_category[0]['id']?>_zoom.png" alt="<?=$product_category[0]['title']?>"/>
         </div>
       <!-- END body top detail -->
       <?php  
@@ -44,7 +44,7 @@
       ?>
         <div>
           <a href="/item/<?=$val['pid']?>">
-            <img src="/assets/files/pix/thumb/<?=$val['pid']?>_thumb.png" alt="<?=$val['pid']?>"/>
+            <img class="imgsize" src="/assets/file/pix/thumbs/<?=$val['pid']?>_thumb.png" alt="<?=$val['pid']?>"/>
             <p>$<?=number_format($val['price']*$val['unitqty'], 2,'.',',')?></p>
           </a>
         </div>

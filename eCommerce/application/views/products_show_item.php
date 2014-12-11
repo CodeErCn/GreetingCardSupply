@@ -11,12 +11,12 @@
     </div>
   <!-- END top div -->
     <div class="body-left">
-      <img src="/assets/file/pix/zoom/<?=$products['id']?>_zoom.png" alt="<?=$products['id']?>"/>
+      <img src="/assets/file/pix/zooms/<?=$products['id']?>_zoom.png" alt="<?=$products['id']?>"/>
     </div>
   <!-- END body left div -->
     <div class="body-right">
       <div class="body-right-thumb">
-        <img src="/assets/file/pix/thumb/<?=$products['id']?>_thumb.png" alt="<?=$products['id']?>"/>
+        <img src="/assets/file/pix/thumbs/<?=$products['id']?>_thumb.png" alt="<?=$products['id']?>"/>
       </div>
     <!-- END body-right-thumb div -->
       <p><?=$products['description']?></p>
@@ -39,11 +39,11 @@
       <h3>Similar Items</h3>
       <div class="similar-images">
       <?php  
-        for($i=0; $i<6; $i++) {
+        for($i=0, $j=count($similar); $i<6 && $i<$j; $i++) {
       ?>
         <div>
           <a href="/item/<?=$similar[$i]['pid']?>">
-            <img src="/assets/files/pix/thumb/<?=$similar[$i]['pid']?>_thumb.png" alt="<?=$similar[$i]['pid']?>"/>
+            <img src="/assets/file/pix/thumbs/<?=$similar[$i]['pid']?>_thumb.png" alt="<?=$similar[$i]['pid']?>"/>
             <p>$<?=number_format($similar[$i]['price']*$similar[$i]['unitqty'], 2,'.',',')?></p>
           </a>
         </div>
