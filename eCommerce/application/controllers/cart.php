@@ -5,9 +5,12 @@ class Cart extends CI_Controller {
 
   public function index()
   {
-    $assoc['cart'] = $this->session->userdata('cart');
-    //$this->session->set_flashdata('cart', 'yes');
-    $this->load->view('cart_index', $assoc);
+    $assoc['items'] = $this->store_model->get_all_products();
+    $this->session->set_flashdata('cart', $assoc);
+    redirect('/');
+//    $this->load->view('cart_index', $assoc);
+
+
     //redirect('/');
     // if the post of qty and id != null
     // update_cart(post(id), post(qty))
@@ -16,10 +19,31 @@ class Cart extends CI_Controller {
     // load view and pass the get_cart info into it
   }
 
-  public function update($id, $qty)
-  {
-    //update session and 0 qty for trash
+  public function update() {
+
+    // Buy form, etc, load stuff.
+    $items = $this->session->userdata('cart');
+    $id = $this->input->post('id');
+    $qty = $this->input->post('qty');
+
+    // Remove if 0, else set.
+    if(isset($items[$id])) {
+      if($qty > 0) {
+        $items[$id] = $qty;
+      } else {
+        unset($items[$id]);
+      }
+    } else {
+      $items[$id] = $qty;
+    }
+
+    // Save to session.
+    $this->session->set_userdata('cart', $items);
+
+    // Load cart page.
+    redirect('/cart');
   }
+
 
   public function validate_save()
   { 

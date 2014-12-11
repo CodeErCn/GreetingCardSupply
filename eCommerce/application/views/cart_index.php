@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 	
 	
 	<style scoped>
 		
-
 		#cart-table {
-			width: 100%;
+			width: 90%;
 		}
 		.left {
 			text-align: left;
@@ -13,9 +11,13 @@
 		.right {
 			text-align: right;
 		}
-		.qty {
+		.center {
 			text-align: center;
-			font-weight: bold;  
+		}
+		.unitqty {
+			text-align: center;
+			font-weight: bold;
+			font-size: 150%;
 		}
 		#cart-table.desc {
 			width: 100%;
@@ -24,6 +26,7 @@
 			font-weight: bold;
 			font-size: 200%;
 		}
+
 
 		#checkoutForm div label {
 			display: inline-block;
@@ -56,39 +59,44 @@
 		#bill_yr {
 			width: 60px;
 		}
-
-
 	</style>
 	
 
-	<table id="cart-table" border=1>
+	<table id="cart-table">
 		<tr>
 			<th class="left">Item</th>
 			<th class="left desc">Description</th>
-			<th>Price</th>
+			<th>Unit Price</th>
 			<th>Qty</th>
 			<th class="right">Amount</th>
 		</tr>
 		<?php
-		$items = array(
-			array('id' => 'E101', 'desc' => 'Some lame envelopes.', 'price' => 0.99, 'qty' => 50)
-		);
+		// $items = array(
+		// 	array('id' => 'E101', 'desc' => 'Some lame envelopes.', 'price' => 0.99, 'qty' => 50)
+		// );
 		$amount = 0;
 		$subtotal = 0;
 		foreach($items AS $item) {
 			$amount = $item['qty'] * $item['price'];
+			$amount = number_format($amount, 2);
 			$subtotal += $amount;
+			$subtotal = number_format($subtotal, 2);
 			?>
 			<tr>
-				<td><?= $item['id'] ?></td>
-				<td><?= $item['desc'] ?></td>
-				<td class="right"><?= $item['price'] ?></td>
-				<td class="qty"><?= $item['qty'] ?></td>
+				<td><a href="/products/show_item/<?= $item['id'] ?>"><img src="/assets/file/pix/icons/<?= $item['id'] ?>_icon.png"></a></td>
+				<td>
+						<div><strong>#<a href="/products/show_item/<?= $item['id'] ?>"><?= $item['id'] ?></a></strong></div>
+						<div><?= $item['color'] ?> <?= $item['description'] ?></div>
+						<div><?= $item['inchwidth'] ?>" x <?= $item['inchheight'] ?>" (<?= $item['metricwidth'] ?> x <?= $item['metricheight'] ?>cm)</div>
+				</td>
+				<td class="center"><?= number_format($item['price'], 2) ?></td>
+				<td class="unitqty"><?= $item['qty'] ?></td>
 				<td class="right"><?= $amount ?></td>
 			</tr>
 			<?php
 		}
 		$total = $subtotal + 1;
+		$total = number_format($total, 2);
 		?>
 		<tr>
 			<th class="right" colspan="4">Subtotal: </th>
@@ -106,15 +114,14 @@
 
 
 	<div>
-		<button>Checkout</button>
-		<button>Continue Shopping</button>
+		<a href="/">Continue Shopping</a>
 	</div>
 
 
 	<form id="checkoutForm" action="" method="post">
 
 
-		<h2>Customer</h2>
+		<h2>Customer Info</h2>
 		<div>
 			<label>First Name: </label>
 			<input type="text" name="first_name">
@@ -133,7 +140,7 @@
 		</div>
 
 
-		<h2>Shipping</h2>
+		<h2>Ship To</h2>
         <div>
         	<label>Attn: </label>
         	<input type="text" name="ship_name">
@@ -160,7 +167,7 @@
 		</div>
 
 
-		<h2>Billing</h2>
+		<h2>Bill To</h2>
 		<div id="same">
 			<input type="checkbox" name="same"> Same as Shipping
 		</div>
@@ -206,68 +213,3 @@
 
 
 	</form>
-=======
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <title>Cart</title>
-      <link rel="stylesheet" type="text/css" href="/assets/css/cart_index.css">
-    </head>
-    <body>
-      <div class="top">
-        <table class="table" border = 1>
-          <thead style="background-color: light gray">
-            <tr>
-              <th>Order ID</th>
-              <th>Name</th>
-              <th>Date</th>
-              <th>Billing Address</th>
-              <th>Total</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-        </table>
-        <div class="buttons">
-          <button>Checkout</button>
-          <button>Continue Shopping</button>
-        </div>
-      </div>
-    <!-- END of top -->
-      <div class="shipping">
-        <h2>Shipping Information</h2>
-        <form>
-          <label>First Name: <input type="text"/></label>
-          <label>Last Name: <input type="text"/></label>
-          <label>Email: <input type="text"/></label>
-          <label>Phone Number:  <input type="text"/></label>
-          <label>Address: <input type="text"/></label>
-          <label>Address2:  <input type="text"/></label>
-          <label>City:  <input type="text"/></label>
-          <label>State: <input type="text"/></label>
-          <label>Zip code:  <input type="text"/></label>
-        </form>
-      </div>
-    <!-- END of shipping -->
-      <div class="billing">
-        <h2>Billing Information</h2>
-        <form>
-          <label><input type="checkbox"/> Same as Shipping</label>
-          <label>First Name: <input type="text"/></label>
-          <label>Last Name: <input type="text"/></label>
-          <label>Email: <input type="text"/></label>
-          <label>Phone Number:  <input type="text"/></label>
-          <label>Address: <input type="text"/></label>
-          <label>Address2:  <input type="text"/></label>
-          <label>City:  <input type="text"/></label>
-          <label>State: <input type="text"/></label>
-          <label>Zip code:  <input type="text"/></label>
-          <label>Card:  <input type="text"/></label>
-          <label>Billing DAte: <input type="text"/></label>
-          <label>Expiration: <input class="month" type="text"/> / <input class="date" type="text"></label>
-        </form>
-      </div>
-    <!-- END of billing -->
-    </body>
-</html>
->>>>>>> bf3757a9b5dfb2d81dfeeeb2895da4535b351f0b

@@ -9,21 +9,37 @@
         // query db with like %
         // called from store and dashboard
       }
-
+      
       public function get_all_categories()
       {
           return $this->db->query("SELECT categories.id, categories.title, categories.description, `lines`.id AS Lid, `lines`.title AS Ltitle FROM categories LEFT JOIN `lines` ON categories.line_id=`lines`.id;")->result_array();
       }
-
+      
       public function get_category_by_id()
       {
 
       }
-
-      public function get_all_products($sortBy=null)
-      {
-
+      
+      
+      public function get_all_products() {
+        //$this->session->userdata('cart');
+        //$cart = array('E101' => '50', 'E102' => '25');
+        $cart = $this->session->userdata('cart');
+        if($cart != false) {
+          $items = "";
+          foreach($cart as $item => $qty) {
+            $items .= "'$item', ";
+          }
+          $items = rtrim($items, ", ");
+          $items2 = $this->db->query("SELECT * FROM products WHERE id IN ($items)")->result_array();
+          $length = count($items2);
+          for($i = 0; $i < $length; $i++) {
+            $items2[$i]['qty'] = $cart[$items2[$i]['id']];
+          }
+          return $items2;
+        }
       }
+
 
       public function get_product_by_id($id=null)
       {
@@ -59,6 +75,16 @@
         //if post
         //update session and 0 qty for trash 
       }
+
+      public function get_qty($id) {
+        // Return qty for product view (which option to select).
+        $items = $this->session->userdata('cart');
+        if(isset($items[$id])) {
+          return $items['qty'];
+        }
+      }
+
+
 
   }
 ?>
