@@ -17,8 +17,9 @@
 	  <!-- End of heading -->
 		
 		<div class="top">
-			<form action="dashboard/order_search" method="post">
-				<input type="text" name="order_search" placeholder="search">
+			<form action="/dashboard/search_orders" method="post">
+				<input type="text" name="search-result" placeholder="Search...">
+				<input type="submit" name="search" value="Search"/>
 			</form>	
 			<!-- END search box input text -->
 			<form class="order-status-filter">

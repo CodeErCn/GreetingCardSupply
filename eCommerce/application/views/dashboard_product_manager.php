@@ -25,9 +25,10 @@
 		  <!-- End of heading -->
 		
 		<div class="top">
-			<form action="dashboard/product_search" method="post">
-				<input type="text" name="product_search">
-			</form>
+			<form action="/dashboard/search_products" method="POST">
+	          <input class="search" type="text" name="search-result"  placeholder="Search.."/>
+	          <input type="submit" name="search" value="Search"/>
+	        </form>
 
 			<a href="/dashboard/add_edit_product" id="add_product">add new product</a>
 			
@@ -68,13 +69,15 @@
 		 
 	 <div class="product-manager-nav">
       <ul>
-      	<?php  
+      	<?php
+      		
 	        for($i=0, $j=ceil($count/50); $i<$j; $i++) 
 	        {
-      	?>
+	    ?>
          	 <li><a href="/dashboard/products/<?=$i+1?>"><?=$i+1?></a></li>
       	<?php 
-	        }
+        	}
+	        
 	    ?>  
       </ul>
     </div>

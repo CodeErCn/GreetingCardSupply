@@ -4,7 +4,7 @@
       public function search_products($post)
       {
         $value = $post['search-result'];
-        $query = "SELECT * FROM products WHERE products.description LIKE '{$value}%' OR products.label LIKE '{$value}%' OR products.type LIKE '{$value}%' OR products.color LIKE '{$value}%' OR products.material like '{$value}%';";
+        $query = "SELECT * FROM products WHERE products.description LIKE '%{$value}%' OR products.label LIKE '{$value}%' OR products.type LIKE '{$value}%' OR products.color LIKE '{$value}%' OR products.material like '{$value}%';";
         return $this->db->query($query)->result_array();
         // query db with like %
         // called from store and dashboard

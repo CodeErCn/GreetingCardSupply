@@ -18,10 +18,22 @@ class Dashboard extends CI_Controller {
       $this->load->view('dashboard_order_manager', $assoc);
 
   }
+  public function search_products()
+  {
+    $return['products'] = $this->store_model->search_products($this->input->post());
+    $return['count']=0;
+    $this->load->view('dashboard_product_manager', $return);
+  }
 
-  public function search_orders($query)
+  public function search_orders()
   {
     // call search_orders in model
+    $this->load->model('Dashboard_model');
+    $return['orders'] = $this->Dashboard_model->search_orders($this->input->post());
+    $return['count']=0;
+    
+    $this->load->view('dashboard_order_manager', $return);
+
   }
 
    public function update_order_status($id)

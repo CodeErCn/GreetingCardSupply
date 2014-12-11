@@ -12,11 +12,27 @@
       ORDER BY orders.created_at DESC; ", array())->result_array();
     }
 
-    public function search_orders($query)
+    public function search_orders($post)
     {
       // sql query to db using $query and like
       // $query="SELECT * FROM orders WHERE $query LIKE '%$query%'";
+        $value = $post['search-result'];
+        $query = "SELECT *, orders.id as orderid FROM orders 
+        LEFT JOIN customers ON orders.customer_id=customers.id
+        LEFT JOIN addresses ON orders.billing_address_id=addresses.id 
+        LEFT JOIN `status` ON orders.status_id=`status`.id 
+        WHERE customers.first_name LIKE '%{$value}%' 
+        OR customers.last_name LIKE '%{$value}%' 
+        OR orders.created_at  LIKE '%{$value}%' 
+        OR addresses.street_address LIKE '%{$value}%' 
+        OR addresses.street_address2 LIKE '%{$value}%'
+        OR addresses.city LIKE '%{$value}%'
+        OR addresses.state LIKE '%{$value}%'
+        OR addresses.zip LIKE '%{$value}%';";
+        return $this->db->query($query, $value)->result_array();
 
+        // query db with like %
+        // called from store and dashboard
     }
 
     public function get_order_info($id)
