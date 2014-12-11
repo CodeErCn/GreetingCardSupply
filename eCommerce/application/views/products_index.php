@@ -8,10 +8,12 @@
   <body>
     <!-- heading Div -->
       <div class="heading">
-
-      <h1><a href="/">Greeting Card Supply</a></h1>
-      <a class="cart" href="/cart">Shopping Cart(?)</a>
-
+        <h1><a href="/">Greeting Card Supply</a></h1>
+        <form action="/search" method="POST">
+          <input class="search" type="text" name="search-result"  placeholder="Search.."/>
+          <input type="submit" name="search" value="Search"/>
+        </form>
+        <a class="cart" href="/cart">Shopping Cart(?)</a>
       </div>
     <!-- End of heading -->
         

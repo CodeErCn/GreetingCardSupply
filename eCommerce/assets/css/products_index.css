@@ -23,6 +23,39 @@ body {
       display: inline-block;
     }
 
+    .heading form {
+      width: 55%;
+      margin-top: 15px;
+      text-align: right;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+        .heading form input.search {
+          width: 55%;
+          height: 30px;
+          padding-left: 35px;
+          background: url('/assets/file/magnifier.png') no-repeat 7px 4px;
+          background-color: snow;
+          border: none;
+          border-radius: 10px;
+          font-size: .9em;
+        }
+
+        .heading form input.search:focus {
+          outline: none;
+        }
+
+        .heading form input[type='submit'] {
+          padding: 7px 3%;
+          background: skyblue;
+          border: none;
+          border-radius: 5px;
+          font-size: 0.9em;
+          color: whitesmoke;
+        }
+
+
     .heading a {
       text-decoration: none;
       color:whitesmoke;
