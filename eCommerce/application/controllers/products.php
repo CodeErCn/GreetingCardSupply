@@ -58,6 +58,8 @@ class Products extends CI_Controller {
       $return['outlet'] = $this->load->view('products_show_item', $this->session->flashdata('showItem'), TRUE);
     } else if($this->session->flashdata('cart')!=null) {
       $return['outlet'] = $this->load->view('cart_index','',TRUE);
+    } else if($this->session->flashdata('searchItem') !=null) {
+      $return['outlet'] = $this->load->view('search', $this->session->flashdata('searchItem'), TRUE);
     }
     //get cart
     //build view
@@ -85,6 +87,13 @@ class Products extends CI_Controller {
     $return['products'] = $this->store_model->get_product_by_id($id);
     $return['similar'] = $this->store_model->get_similar($return['products']['type']);
     $this->session->set_flashdata('showItem', $return);
+    redirect('/');
+  }
+
+  public function search()
+  {
+    $return['result'] = $this->store_model->search_products($this->input->post());
+    $this->session->set_flashdata('searchItem', $return);
     redirect('/');
   }
 }
