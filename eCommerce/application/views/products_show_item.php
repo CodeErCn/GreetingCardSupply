@@ -25,11 +25,24 @@
       <p>Color: <span><?=$products['color']?></span></p>
       <p>Material: <span><?=$products['material']?></span></p>
       
-      <form action="#" method="">
-        <select>
-          <option value="opt1">option1</option>
-          <option value="opt2">option2</option>
-          <option value="opt3">option3</option>
+      <form action="/cart/update" method="post">
+      	<input type="hidden" name="id" value="<?=$products['id']?>">
+        <select name="qty">
+        <?php
+        	$checked1 = "";
+        	$checked2 = "";
+        	$checked3 = "";
+        	if($qty == 1) {
+        		$checked1 = " selected";
+        	} else if($qty == 2) {
+        		$checked2 = " selected";
+        	} else if($qty == 3) {
+        		$checked3 = " selected";
+        	}
+        ?>
+          <option value="<?= 1 * $products['unitqty'] ?>"<?= $checked1 ?>><?= 1 * $products['unitqty'] ?> ($<?= number_format(1 * $products['unitqty'] * $products['price'], 2); ?>)</option>
+          <option value="<?= 2 * $products['unitqty'] ?>"<?= $checked2 ?>><?= 2 * $products['unitqty'] ?> ($<?= number_format(2 * $products['unitqty'] * $products['price'], 2); ?>)</option>
+          <option value="<?= 3 * $products['unitqty'] ?>"<?= $checked3 ?>><?= 3 * $products['unitqty'] ?> ($<?= number_format(3 * $products['unitqty'] * $products['price'], 2); ?>)</option>
         </select>
         <input type="submit" name="submit-buy" value="Buy">
       </form>

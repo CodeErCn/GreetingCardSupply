@@ -11,9 +11,13 @@
 		.right {
 			text-align: right;
 		}
-		.qty {
+		.center {
 			text-align: center;
-			font-weight: bold;  
+		}
+		.unitqty {
+			text-align: center;
+			font-weight: bold;
+			font-size: 150%;
 		}
 		#cart-table.desc {
 			width: 100%;
@@ -62,14 +66,14 @@
 		<tr>
 			<th class="left">Item</th>
 			<th class="left desc">Description</th>
-			<th>Price</th>
+			<th>Unit Price</th>
 			<th>Qty</th>
 			<th class="right">Amount</th>
 		</tr>
 		<?php
-		$items = array(
-			array('id' => 'E101', 'desc' => 'Some lame envelopes.', 'price' => 0.99, 'qty' => 50)
-		);
+		// $items = array(
+		// 	array('id' => 'E101', 'desc' => 'Some lame envelopes.', 'price' => 0.99, 'qty' => 50)
+		// );
 		$amount = 0;
 		$subtotal = 0;
 		foreach($items AS $item) {
@@ -79,10 +83,14 @@
 			$subtotal = number_format($subtotal, 2);
 			?>
 			<tr>
-				<td><?= $item['id'] ?></td>
-				<td><?= $item['desc'] ?></td>
-				<td class="right"><?= $item['price'] ?></td>
-				<td class="qty"><?= $item['qty'] ?></td>
+				<td><a href="/products/show_item/<?= $item['id'] ?>"><img src="/assets/file/pix/icons/<?= $item['id'] ?>_icon.png"></a></td>
+				<td>
+						<div><strong>#<a href="/products/show_item/<?= $item['id'] ?>"><?= $item['id'] ?></a></strong></div>
+						<div><?= $item['color'] ?> <?= $item['description'] ?></div>
+						<div><?= $item['inchwidth'] ?>" x <?= $item['inchheight'] ?>" (<?= $item['metricwidth'] ?> x <?= $item['metricheight'] ?>cm)</div>
+				</td>
+				<td class="center"><?= number_format($item['price'], 2) ?></td>
+				<td class="unitqty"><?= $item['qty'] ?></td>
 				<td class="right"><?= $amount ?></td>
 			</tr>
 			<?php
@@ -113,7 +121,7 @@
 	<form id="checkoutForm" action="" method="post">
 
 
-		<h2>Customer</h2>
+		<h2>Customer Info</h2>
 		<div>
 			<label>First Name: </label>
 			<input type="text" name="first_name">
@@ -132,7 +140,7 @@
 		</div>
 
 
-		<h2>Shipping</h2>
+		<h2>Ship To</h2>
         <div>
         	<label>Attn: </label>
         	<input type="text" name="ship_name">
@@ -159,7 +167,7 @@
 		</div>
 
 
-		<h2>Billing</h2>
+		<h2>Bill To</h2>
 		<div id="same">
 			<input type="checkbox" name="same"> Same as Shipping
 		</div>

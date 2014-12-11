@@ -84,6 +84,11 @@ class Products extends CI_Controller {
     //get the product_by_id
     $return['products'] = $this->store_model->get_product_by_id($id);
     $return['similar'] = $this->store_model->get_similar($return['products']['type']);
+
+    // Get qty by id.
+    $return['qty'] = $this->cart->get_qty($id);
+    
+    // Build view into session and redirect.
     $this->session->set_flashdata('showItem', $return);
     redirect('/');
   }
