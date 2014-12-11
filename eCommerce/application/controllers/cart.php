@@ -6,7 +6,9 @@ class Cart extends CI_Controller {
   public function index()
   {
     $assoc['items'] = $this->store_model->get_all_products();
-    $this->load->view('cart_index', $assoc);
+    $this->session->set_flashdata('cart', $assoc);
+    redirect('/');
+//    $this->load->view('cart_index', $assoc);
 
 
     //redirect('/');
@@ -40,16 +42,6 @@ class Cart extends CI_Controller {
 
     // Load cart page.
     redirect('/cart');
-  }
-
-
-  public get_qty($id) {
-    // Return qty for product view (which option to select).
-    $items = $this->session->userdata('cart');
-    var_dump($items); die('asd');
-    if(isset($items[$id])) {
-      return $items['qty'];
-    }
   }
 
 

@@ -51,13 +51,13 @@ class Products extends CI_Controller {
     $result= $this->store_model->get_all_categories();   
     $return['main'] = pageMain($result);
     $return['outlet'] = $this->load->view('products_category_main', pageCategoryMain($result), TRUE);
-    
+
     if($this->session->flashdata('categoryDetail') != null) {
       $return['outlet'] = $this->load->view('products_category_detail', $this->session->flashdata('categoryDetail'), TRUE);
     } else if ($this->session->flashdata('showItem') !=null) {
       $return['outlet'] = $this->load->view('products_show_item', $this->session->flashdata('showItem'), TRUE);
     } else if($this->session->flashdata('cart')!=null) {
-      $return['outlet'] = $this->load->view('cart_index','',TRUE);
+      $return['outlet'] = $this->load->view('cart_index', $this->session->flashdata('cart'), TRUE);
     } else if($this->session->flashdata('searchItem') !=null) {
       $return['outlet'] = $this->load->view('search', $this->session->flashdata('searchItem'), TRUE);
     }
@@ -86,10 +86,12 @@ class Products extends CI_Controller {
     //get the product_by_id
     $return['products'] = $this->store_model->get_product_by_id($id);
     $return['similar'] = $this->store_model->get_similar($return['products']['type']);
-
-    // Get qty by id.
-    $return['qty'] = $this->cart->get_qty($id);
     
+    // Get qty by id.
+    $return['qty'] = $this->store_model->get_qty($id);
+    if(!isset($return['qty'])) {
+      $return['qty'] = 0;
+    }
     // Build view into session and redirect.
     $this->session->set_flashdata('showItem', $return);
     redirect('/');

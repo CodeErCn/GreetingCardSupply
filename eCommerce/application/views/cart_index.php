@@ -3,7 +3,7 @@
 	<style scoped>
 		
 		#cart-table {
-			width: 100%;
+			width: 90%;
 		}
 		.left {
 			text-align: left;
@@ -62,7 +62,7 @@
 	</style>
 	
 
-	<table id="cart-table" border=1>
+	<table id="cart-table">
 		<tr>
 			<th class="left">Item</th>
 			<th class="left desc">Description</th>

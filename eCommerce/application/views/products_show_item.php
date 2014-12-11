@@ -29,16 +29,18 @@
       	<input type="hidden" name="id" value="<?=$products['id']?>">
         <select name="qty">
         <?php
-        	$checked1 = "";
-        	$checked2 = "";
-        	$checked3 = "";
-        	if($qty == 1) {
-        		$checked1 = " selected";
-        	} else if($qty == 2) {
-        		$checked2 = " selected";
-        	} else if($qty == 3) {
-        		$checked3 = " selected";
-        	}
+	        if(isset($qty)) {
+	        	$checked1 = "";
+	        	$checked2 = "";
+	        	$checked3 = "";
+	        	if($qty == 1) {
+	        		$checked1 = " selected";
+	        	} else if($qty == 2) {
+	        		$checked2 = " selected";
+	        	} else if($qty == 3) {
+	        		$checked3 = " selected";
+	        	}
+	        }
         ?>
           <option value="<?= 1 * $products['unitqty'] ?>"<?= $checked1 ?>><?= 1 * $products['unitqty'] ?> ($<?= number_format(1 * $products['unitqty'] * $products['price'], 2); ?>)</option>
           <option value="<?= 2 * $products['unitqty'] ?>"<?= $checked2 ?>><?= 2 * $products['unitqty'] ?> ($<?= number_format(2 * $products['unitqty'] * $products['price'], 2); ?>)</option>

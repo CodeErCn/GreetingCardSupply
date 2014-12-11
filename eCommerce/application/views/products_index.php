@@ -10,10 +10,10 @@
       <div class="heading">
         <h1><a href="/">Greeting Card Supply</a></h1>
         <form action="/search" method="POST">
-          <input class="search" type="text" name="search-result"  placeholder="Search.."/>
+          <input class="search" type="text" name="search-result" placeholder="Search.."/>
           <input type="submit" name="search" value="Search"/>
         </form>
-        <a class="cart" href="/cart">Shopping Cart(?)</a>
+        <a class="cart" href="/cart">Shopping Cart (<?php echo count($this->session->userdata('cart')); ?>)</a>
       </div>
     <!-- End of heading -->
         
