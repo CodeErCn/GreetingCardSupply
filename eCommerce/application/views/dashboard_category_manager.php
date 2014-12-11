@@ -12,15 +12,15 @@
 					    <a href="/dashboard/products">Products</a>
 					    <a href="/dashboard/categories">Categories</a>
 					</div>
-				    <a class="log-off" href="/admin/logout">Log Off</a>
+					<form action="/dashboard/search_orders" method="post">
+						<input class="search" type="text" name="product-search" placeholder="Search...">
+						<input type="submit" name="search" value="Search"/>
+					</form>	
+				  <a class="log-off" href="/admin/logout">Log Off</a>
 			    </div>
 			  <!-- End of heading -->
 			
 			<div class="top">
-				<form action="dashboard/product_search" method="post">
-					<input type="text" name="product_search">
-				</form>
-
 				<button name="add_product">add new category</button>
 			</div>
 		<!-- END of div top -->

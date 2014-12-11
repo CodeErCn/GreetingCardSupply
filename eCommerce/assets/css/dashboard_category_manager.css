@@ -40,6 +40,38 @@ div.dashboard-heading {
               color: whitesmoke;
             }
 
+    div.dashboard-heading form {
+          width: 50%;
+          margin-top: 15px;
+          text-align: right;
+          display: inline-block;
+          vertical-align: top;
+        }
+
+            div.dashboard-heading form input.search {
+              width: 65%;
+              height: 30px;
+              padding-left: 35px;
+              background: url('/assets/file/magnifier.png') no-repeat 7px 4px;
+              background-color: snow;
+              border: none;
+              border-radius: 10px;
+              font-size: .9em;
+            }
+
+            div.dashboard-heading form input.search:focus {
+              outline: none;
+            }
+
+            div.dashboard-heading form input[type='submit'] {
+              padding: 7px 3%;
+              background: skyblue;
+              border: none;
+              border-radius: 5px;
+              font-size: 0.9em;
+              color: whitesmoke;
+            }
+
 footer {
   width: 100%;
   position: fixed;
