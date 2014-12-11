@@ -45,12 +45,13 @@ div.top {
   }  
       div.body div.body-top-detail {
         width: 94.5%;
-        height: 190px;
-        margin: 20px 0;
+        height: 250px;
+        margin: 20px 0 30px;
       }
 
           div.body div.body-top-detail p {
-            width: 70%;
+            width: 60%;
+            margin-top: 40px;
             display: inline-block;
           }
 
@@ -58,12 +59,11 @@ div.top {
             display: inline-block;
             vertical-align: top;
             margin: 0px 3%;
-
           }
 
       div.body div {
         width: 18%;
-        height: 200px;
+        height: 150px;
         padding: 5px;
         display: inline-block;
         vertical-align: top;
@@ -78,15 +78,20 @@ div.top {
         color: whitesmoke;
       }
 
+      div.body img.imgsize {
+        width: 100%;
+        height: 90%;
+      }
+
   div.product-page-nav ul {
     list-style-type: none;
-    margin-left: 25%;
+    margin-left: 15%;
     margin-bottom: 20px;
   }
   
       div.product-page-nav ul li{
         display: inline-block;
-        padding: 0px 2%;
+        padding: 0px 1%;
       }
 
       div.product-page-nav ul li a {

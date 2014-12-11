@@ -1,0 +1,45 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 100%;
+  background-color: tomato;
+  font-family: sans-serif;
+}
+
+h2 {
+  color: whitesmoke;
+  margin-bottom: 20px;
+}
+
+div.search-result { 
+  width: 90%;
+  margin-left: 3%;
+  
+}
+
+div.each-result {
+  width: 45%;
+  margin: 10px 0%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.each-result>a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+  
+    div.each-result img {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    div.each-result div.each-result-desc {
+
+      display: inline-block;
+      vertical-align: top;
+      font-size: .7em;
+    }
