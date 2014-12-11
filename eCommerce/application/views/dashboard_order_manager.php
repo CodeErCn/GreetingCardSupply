@@ -8,11 +8,11 @@
 	    <div class="dashboard-heading">
 		    <h1>Dashboard</h1>
 		    <div class="dashboard-link">
-			    <a href="#">Order</a>
-			    <a href="#">Products</a>
-			    <a href="#">Categories</a>
-		    </div>
-		    <a class="log-off" href="#">Log Off</a>
+			    <a href="/dashboard">Order</a>
+			    <a href="/dashboard/products">Products</a>
+			    <a href="/dashboard/categories">Categories</a>
+			</div>
+		    <a class="log-off" href="/admin/logout">Log Off</a>
 	    </div>
 	  <!-- End of heading -->
 		
@@ -51,36 +51,45 @@
 			
 			<tbody>
 				<?php
-						// var_dump($orders);
-						// die('here');
+
+
 				for($i=0;$i<count($orders);$i++)
 					{
+						$selected = array('1'=>'','2'=>'','3'=>'','4'=>'');
 
+						if($orders[$i]['status_id'] == '1')
+						{
+							$selected['1'] = "selected";
+						}
+						else if($orders[$i]['status_id'] == '2')
+						{
+							$selected['2'] = "selected";
+						}
+						else if($orders[$i]['status_id'] == '3')
+						{
+							$selected['3'] = "selected";
+						}
+						else if($orders[$i]['status_id'] == '4')
+						{
+							$selected['4'] = "selected";
+						}  
 				?>
 				
 					<tr>
-						<td><a href="/dashboard/show_order/<?= $orders[$i]['id'] ?>">
-							<?= $orders[$i]['id'] ?></a></td>
-						<td><?php
-						//$order['first_name'].+' '+.$order['last_name'] ?></td>
-						<td><?php
-						//$order['created_at'] ?></td>
-						<td><?php
-						// $order['street_address'].+' '+.$order['street_address2'].+' '+.$order['city'].+' '+.$order['state'].+' '+.$order['zip'] ?></td>
-						<td><?php
-						// $total // some function to get total from order based on items table ?></td>
+						<td><a href="/dashboard/show_order/<?= $orders[$i]['orderid'] ?>"><?= $orders[$i]['orderid'] ?></a></td>
+						<td><?= $orders[$i]['first_name'] ." ". $orders[$i]['last_name'] ?></td>
+						<td><?= $orders[$i]['created_at'] ?></td>
+						<td><?= $orders[$i]['street_address']." ".$orders[$i]['street_address2']." ".$orders[$i]['city']." ".$orders[$i]['state']." ".$orders[$i]['zip'] ?></td>
+						<td><?= $orders[$i]['total'] ?></td>
 						<td style="text-align:center">
-							<form action='/dashboard/update_order_status/<?php //$order['id'] ?>'>
+							<form action='/dashboard/update_order_status/<?= $orders[$i]['orderid'] ?>'>
 								<select name='order_status'>
-									<option <?php 
-									// $status['pending'] ?> value='1' >pending</option>
-									<option <?php 
-									// $status['process'] ?> value='2' >in process</option>
-									<option <?php 
-									// $status['shipped'] ?> value='3' >shipped</option>
-									<option <?php
-									 // $status['cancelled'] ?> value='4' >cancelled</option>
-								</select>	
+									<option <?= $selected['1'] ?> value='1' >pending</option>
+									<option <?= $selected['2'] ?> value='2' >in process</option>
+									<option <?= $selected['3'] ?> value='3' >shipped</option>
+									<option <?= $selected['4'] ?> value='4' >cancelled</option>
+								</select>
+								<input type='submit' value='go'>	
 							</form>
 						</td>
 					</tr>
@@ -91,17 +100,14 @@
 
 		 <div class="order-manager-nav">
 	        <ul>
-	          <li><a href="#">1</a></li>
-	          <li><a href="#">2</a></li>
-	          <li><a href="#">3</a></li>
-	          <li><a href="#">4</a></li>
-	          <li><a href="#">5</a></li>
-	          <li><a href="#">6</a></li>
-	          <li><a href="#">7</a></li>
-	          <li><a href="#">8</a></li>
-	          <li><a href="#">9</a></li>
-	          <li><a href="#">10</a></li>
-	          <li><a href="#">>></a></li>
+	          	<?php  
+        			for($i=0, $j=ceil($count/25); $i<$j; $i++) 
+        			{
+      			?>
+      			    <li><a href="/dashboard/<?=$i+1?>"><?=$i+1?></a></li>
+      			<?php 
+        			}
+      			?>
 	        </ul>
 	      </div>
 	    <!-- END order manager nav -->  

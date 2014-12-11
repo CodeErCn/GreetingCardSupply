@@ -5,7 +5,7 @@
     {
      // Order manager
      // get_all_orders and sort by desc
-      return $this->db->query("SELECT * FROM orders 
+      return $this->db->query("SELECT *, orders.id as orderid FROM orders 
       LEFT JOIN customers ON orders.customer_id=customers.id
       LEFT JOIN addresses ON orders.billing_address_id=addresses.id 
       LEFT JOIN `status` ON orders.status_id=`status`.id 
@@ -31,10 +31,21 @@
       LEFT JOIN `status` ON orders.status_id=`status`.id 
       LEFT JOIN items ON orders.id=items.order_id 
       LEFT JOIN products ON items.product_id=products.id 
-      WHERE orders.id = ?; ", array($id))->row_array();
-     
+      WHERE orders.id = ?; ", array($id))->result_array();
     }
-
+    
+    public function update_order_status($id, $status)
+    {
+      // query sql and edit
+      $query = "UPDATE orders SET status_id=? WHERE orders.id='$id'";
+      $values = array($status);
+      return $this->db->query($query, $values);
+    } 
+    public function get_all_products()
+    {
+     // Product manager, get_all_products
+      return $this->db->query("SELECT * FROM products; ", array())->result_array();
+    }
 
     public function add_product($product)
     {
@@ -56,9 +67,20 @@
     public function delete_product($id)
     {
       // query sql and remove
-      $query = "DELETE FROM products WHERE id = $id";
-      $this->db->query($query);
+      $query = "UPDATE products SET active=0 WHERE products.id='$id'";
+      
+      $delete = $this->db->query($query);
+      
     } 
+    
+    public function get_all_categories()
+    {
+     // Product manager, get_all_products
+     
+      return $this->db->query("SELECT categories.title, categories.description, categories.id AS cid, count(products.category_id) 
+        FROM products RIGHT JOIN categories ON products.category_id=categories.id GROUP BY (category_id); ", array())->result_array();
+      
+    }
 
     public function add_category($category)
     {
@@ -81,11 +103,16 @@
     {
       // query sql and remove
       // do not remove if there are products
-      $result=$this->db->query("SELECT * FROM products where category_id =$id")->result_array();
+      $result=$this->db->query("SELECT * FROM products where category_id='$id'")->result_array();
       if(count($result)==0)
       {
-        $query = "DELETE FROM categories WHERE id = $id";
+        $query = "DELETE FROM categories WHERE id='$id'";
         $this->db->query($query);
+      }
+      else
+      {
+        echo 'there are products in this category, it cannot be deleted';
+        die('');
       }
     } 
 

@@ -37,7 +37,7 @@ class Admin extends CI_Controller {
     //return to admin index
     $this->session->set_userdata('email', '');
     $this->session->set_flashdata('message', "You are now logged off.");
-    redirect('/');
+    redirect('admin/index');
   }
 }
 

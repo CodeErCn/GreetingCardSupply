@@ -2,17 +2,25 @@
 	<head>
 		<title>product manager</title>
 		<link rel="stylesheet" type="text/css" href="/assets/css/dashboard_product_manager.css">
+		
+		<!-- jquery links -->
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+		<script src="js/dialog.js" type="text/javascript"></script>
+		<!-- end jquery links -->
+
 	</head>
 	<body>
 		<!-- heading Div -->
 		    <div class="dashboard-heading">
 			    <h1>Dashboard</h1>
 			    <div class="dashboard-link">
-				    <a href="#">Order</a>
-				    <a href="#">Products</a>
-				    <a href="#">Categories</a>
+				    <a href="/dashboard">Order</a>
+				    <a href="/dashboard/products">Products</a>
+				    <a href="/dashboard/categories">Categories</a>
 			    </div>
-			    <a class="log-off" href="#">Log Off</a>
+			    <a class="log-off" href="/admin/logout">Log Off</a>
 		    </div>
 		  <!-- End of heading -->
 		
@@ -21,9 +29,13 @@
 				<input type="text" name="product_search">
 			</form>
 
-			<button name="add_product">add new product</button>
+			<a href="/dashboard/add_edit_product" id="add_product">add new product</a>
+			
+			
 		</div>
 	<!-- END of div top -->
+
+	
 
 		<table class="dashboard" border = 1>
 			<thead>
@@ -37,36 +49,33 @@
 				</tr>
 			</thead>
 			<tbody>
-				 <?php //foreach (products as $product) { ?>
+				 <?php foreach($products as $product) { ?>
 				<tr>
-					<td><?php // $images.product_id where type = thumb ?></a></td>
-					<td><?php // $product_id ?></td>
-					<td><?php // $product_title ?></td>
-					<td><?php // $inventory_count query based on products table ?></td>
-					<td><?php // $quantity_sold query based on qty in items table ?></td>
+					<td><img src="/assets/file/pix/icons/<?= $product['id'] ?>_icon.png"></td>
+					<td><?= $product['id'] ?></td>
+					<td><?= $product['description'] ?></td>
+					<td><?= $product['inventory_count'] ?></td>
+					<td><?= $product['quantity_sold'] ?></td>
 					<td>
-						<a href="/orders/show/<?php // dashboard/add_product/product_id ?>">edit</a> 
-						<a href="/orders/show/<?php // dashboard/delete_product/product_id ?>">delete</a>			
+						<a href="/dashboard/add_edit_product/<?= $product['id'] ?>">edit</a> 
+						<a href="/dashboard/delete_product/<?= $product['id'] ?>">delete</a>			
 					</td>
 				</tr>
-				<?php //} ?>
+				<?php } ?>
 			</tbody>
 		</table>
 	<!-- End of product table for dashboard -->
 		 
 	 <div class="product-manager-nav">
       <ul>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">6</a></li>
-        <li><a href="#">7</a></li>
-        <li><a href="#">8</a></li>
-        <li><a href="#">9</a></li>
-        <li><a href="#">10</a></li>
-        <li><a href="#">>></a></li>
+      	<?php  
+	        for($i=0, $j=ceil($count/50); $i<$j; $i++) 
+	        {
+      	?>
+         	 <li><a href="/dashboard/products/<?=$i+1?>"><?=$i+1?></a></li>
+      	<?php 
+	        }
+	    ?>  
       </ul>
     </div>
   <!-- END product manager nav -->  

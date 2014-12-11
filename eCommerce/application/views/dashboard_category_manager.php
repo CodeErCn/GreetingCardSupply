@@ -8,11 +8,11 @@
 			    <div class="dashboard-heading">
 				    <h1>Dashboard</h1>
 				    <div class="dashboard-link">
-					    <a href="#">Order</a>
-					    <a href="#">Products</a>
-					    <a href="#">Categories</a>
-				    </div>
-				    <a class="log-off" href="#">Log Off</a>
+					    <a href="/dashboard">Order</a>
+					    <a href="/dashboard/products">Products</a>
+					    <a href="/dashboard/categories">Categories</a>
+					</div>
+				    <a class="log-off" href="/admin/logout">Log Off</a>
 			    </div>
 			  <!-- End of heading -->
 			
@@ -25,53 +25,43 @@
 			</div>
 		<!-- END of div top -->
 
+		<?php
+
+			
+
+		?>
+
+
 		<table class="dashboard" border = 1>
 			<thead>
 				<tr>
 					<th>Picture</th>
 					<th>ID</th>
 					<th>Name</th>
-					<th>Total Category Products</th>
-					<th>Inventory Count</th>
-					<th>Quantity Sold</th>
+					<th>Description</th>
+					<th>Total Products Per Category</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
-				<?php // foreach (categories as $category) { ?>
+				<?php  foreach ($categories as $category) { ?>
 				<tr>
-					<td><?php // $images.category_id where type = thumb ?></a></td>
-					<td><?php // $id ?></td>
-					<td><?php // $title ?></td>
-					<td><?php // $category_count query that = total number of products in category based on products table with specific category_id ?></td>
-					<td><?php // $inventory_count query based on products table ?></td>
-					<td><?php // $quantity_sold query based on items table ?></td>
+					<td><img src="/assets/file/pix/category/<?= $category['cid'] ?>_thumb.png"></td>
+					<td><?= $category['cid'] ?></td>
+					<td><?= $category['title'] ?></td>
+					<td><?= $category['description'] ?></td>
+					<td><?= $category['count(products.category_id)'] ?></td>
 					<td>
-						<a href="/dashboard/edit_category/<?php // category_id ?>">edit</a> 
-						<a href="/dashboard/delete_category/<?php // category_id ?>">delete</a>			
+						<a href="/dashboard/edit_category/<?php $category['cid'] ?>">edit</a> 
+						<a href="/dashboard/delete_category/<?php $category['cid'] ?>">delete</a>			
 					</td>
 				</tr>
-				<?php // } ?>
+				<?php  } ?>
 			</tbody>
 		</table>
 	<!-- END of category table for dashboard -->
 
-		<div class="category-manager-nav">
-	      <ul>
-	        <li><a href="#">1</a></li>
-	        <li><a href="#">2</a></li>
-	        <li><a href="#">3</a></li>
-	        <li><a href="#">4</a></li>
-	        <li><a href="#">5</a></li>
-	        <li><a href="#">6</a></li>
-	        <li><a href="#">7</a></li>
-	        <li><a href="#">8</a></li>
-	        <li><a href="#">9</a></li>
-	        <li><a href="#">10</a></li>
-	        <li><a href="#">>></a></li>
-	      </ul>
-	    </div>
-	  <!-- END category manager nav -->  
+		
 			<footer>Greeting Card Supply 2014</footer>
 	</body>
 </html>
